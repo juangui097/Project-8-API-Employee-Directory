@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Startup Employee Directory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>AWESOME STARTUP EMPLOYEE DIRECTORY</h1>
+    <div class="search-container">
+      <input type="text" name="search" value="" autocomplete="off" id="search" onkeyup="searchFilter()" placeholder="Enter a name or username">
+    </div>
+  </header>
+  <main id="grid-container">
+  </main>
+  <div class="overlay hidden">
+    <div class="modal">
+      <p class="modal-close">X</p>
+      <div class="modal-content"></div>
+    </div>
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+  </div>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+/*__________________________________________________________________
+----------------------------    GLOBAL    --------------------------
+--------------------------------------------------------------------*/
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FAFAFA;
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+/*__________________________________________________________________*/
+/*--------------------------    HEADER    --------------------------*/
+/*------------------------------------------------------------------*/
+header {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+h1 {
+  width: 90%;
+  margin: auto;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  color: #484848;
+}
+/*----------   SEARCH-BAR  ----------*/
+.search-container {
+  width: 80%;
+  max-width: 280px;
+  height: 35px;
+  margin: auto;
+  margin-top: 20px;
+}
+#search {
+  width: 100%;
+  height: 100%;
+  border: 1px solid lightgrey;
+  padding: 7px;
+  border-radius: 5px;
+  outline: none;
+  color: #8E8E8E;
+  font-style: italic;
+  font-size: 15px;
+}
+#search::-webkit-search-cancel-button{
+  display: none!important;
+}
+
+/*__________________________________________________________________*/
+/*--------------------------    BODY    ----------------------------*/
+/*------------------------------------------------------------------*/
+#grid-container {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+
+/*----------   EMPLOYEE CARD  ----------*/
+/*-----------       AND     -----------*/
+/*----------   OVERLAY MODAL  ----------*/
+.card {
+  background-color: #fff;
+  height: 230px;
+  max-width: 280px;
+  margin: auto;
+  overflow: hidden;
+  border: 2px solid lightgrey;
+  border-radius: 6px;
+} .card:nth-child(n+2) {
+  margin-top: 20px;
+}
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  background: linear-gradient(153deg, rgba(170,169,185,1) 0%, rgba(195,195,195,1) 0%, rgba(255,255,255,1) 54%);
+}
+/* Profile image */
+.avatar {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+.text-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.name,
+.modal-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3C3C3C;
+}
+
+.email, .address,
+.modal-email, .modal-address,
+.phone, .address-2, .birthday {
+  margin-top: 7px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #8E8E8E;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(100, 100, 100, 0.4);
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 20%;
+  left: 50%;
+  background-color: #fff;
+  border: 1px solid #778;
+  border-radius: 5px;
+  text-align: center;
+  width: 250px;
+  margin-left: -125px;
+  padding: 30px 20px;
+}
+.modal-close {
+  position: absolute;
+  right: 9px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.modal-avatar {
+  border-radius: 50%;
+  height: 110px;
+  width: 110px;
+}
+.modal-text-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #8E8E8E;
+}
+
+.text-container2 {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/*----------   Next & previous buttons  ----------*/
+.prev,
+.next {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(27, 27, 27, 0.95);
+  color: #fff;
+  position: absolute;
+  width: auto;
+  transition: 0.4s ease;
+  top: 40%;
+  font-weight: 200;
+  font-size: 20px;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.next {
+  right: 5px;
+  z-index: 999;
+}
+.prev {
+  left: 6px;
+  z-index: 999;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(27, 27, 27, 0.74);
+}
+
+
+
+/*_________________________________________________________________________*/
+/*--------------------------    MEDIA QUERIES   --------------------------*/
+/*------------------------------------------------------------------------*/
+@media all and (min-width: 552px) {
+  header {
+    padding-top: 25px;
+  }
+  .search-container {
+    max-width: 300px;
+  }#search {
+    padding: 7px 14px;
+  }
+  #grid-container {
+    width: 90%;
+    max-width: 526px;
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    margin: 0;
+    margin: 1.3%;
+  } .card:nth-child(n+2) {
+    margin: 0;
+    margin: 1.3%;
+  }
+
+  .prev,
+  .next {
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    top: 35%;
+  }
+  .next {
+    right: 7%;
+  }.prev {
+    left: 7%;
+  }
+}
+
+
+@media all and (min-width: 740px) {
+  #grid-container {
+    max-width: 600px;
+    grid-gap: 22px;
+  }
+  .modal {
+    margin-left: -150px;
+    width: 300px;
+    padding: 40px 30px;
+  }
+  .modal-text-container {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }.text-container2 {
+    margin-top: 25px;
+  }
+  .phone,
+  .address-2,
+  .birthday {
+    margin-top: 12px;
+  }
+
+  .next {
+    right: 9%;
+    top:38%;
+  }.prev {
+    left: 9%;
+    top:38%;
+  }
+}
+
+
+@media all and (min-width: 844px) {
+  #grid-container {
+    max-width: 750px;
+    margin-top: 15px;
+    grid-gap: 40px;
+  }
+  .card {
+    height: 160px;
+    max-width: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }.card:nth-child(n+2) {
+    margin: 0;
+  }
+  .avatar {
+    margin: 0;
+    height: 115px;
+    width: 115px;
+  }
+  .text-container {
+    margin: 0;
+    margin-left: 20px;
+    width: 53%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .email,
+  .address {
+    font-size: 15px;
+    margin-top: 8px;
+  }
+  .modal {
+    width: 350px;
+    margin-left: -175px;
+  }
+  .modal-close {
+    top: 9px;
+    right: 12px;
+  }
+  .modal-avatar {
+    height: 125px;
+    width: 125px;
+  }
+
+  .prev,
+  .next {
+    font-size: 35px;
+    padding: 1px 6px;
+  }
+  .next {
+    right: 19%;
+  }.prev {
+    left: 19%;
+  }
+}
+
+
+@media all and (min-width: 1008px) {
+  header {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    width: 90%;
+    max-width: 1074px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  h1 {
+    margin: 0;
+    width: auto;
+    padding-bottom: 2px;
+  }
+  .search-container {
+    margin: 0;
+  } #search {
+    padding: 8px 14px;
+  }
+  #grid-container {
+    margin-top: 20px;
+    max-width: 1074px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px 1.8%;
+  }
+  .card {
+    height: 150px;
+  }
+  .avatar {
+    height: 100px;
+    width: 100px;
+  }.text-container {
+    margin-left: 4%;
+    width: 55%;
+  }
+  .name {
+    font-size: 16px;
+  }.email,
+  .address {
+    margin-top: 6px;
+    font-size: 14px;
+  }
+  .modal {
+    top: 13.7%;
+    width: 380px;
+    margin-left: -190px;
+    padding: 45px 34px;
+  }
+  .modal-avatar {
+    height: 133px;
+    width: 133px;
+  }
+  .modal-text-container {
+    margin-bottom: 30px;
+  }
+  .modal-name {
+    font-size: 19px;
+  }
+  .modal-email,
+  .modal-address {
+    margin-top: 11px;
+  }
+  .text-container2 {
+    margin-top: 28px;
+  }
+  .phone,
+  .address-2,
+  .birthday {
+    margin-top: 16px;
+  }
+  .prev,.next {top:35%;}
+}
+
+@media all and (min-width: 1090px) {
+  #grid-container {
+    grid-gap: 27px;
+  }
+}
+
+@media all and (min-width: 1150px) {
+  header {
+    padding-bottom: 25px;
+  }
+  #grid-container {
+    grid-gap: 29px;
+    margin-top: 0;
+  }
+  .card {
+    height: 160px;
+  }
+  .avatar {
+    height: 105px;
+    width: 105px;
+  }
+  .name {
+    font-size: 17px;
+  }.email {
+    margin-top: 9px;
+  }.address {
+    margin-top: 7px;
+  }
+}
+
+@media all and (min-width: 1264px) {
+  header {
+    padding-top: 50px;
+    max-width: 1140px;
+  }
+  #grid-container {
+    max-width: 1140px;
+    margin-top: 10px;
+    grid-gap: 33px;
+  }
+  .avatar {
+    height: 109px;
+    width: 109px;
+    margin-left: 10px;
+  }
+  .text-container {
+    margin-left: 18px;
+  }
+  .name {
+    font-size: 18px;
+  }.email,
+  .address {
+    font-size: 15px;
+  }
+  .prev,
+  .next {
+    font-weight: bold;
+    font-size: 40px;
+    padding: 2px 8px;
+  }
+  .next {
+    right: 28%;
+  }.prev {
+    left: 28%;
+  }
+}
